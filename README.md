@@ -1,1 +1,1 @@
-# practice-projects-js
+Practice projects from courses and tutorials.
