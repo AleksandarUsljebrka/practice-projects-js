@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Social Network</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+    </head>
+    <body>
+        <div class="header">
+            <h1>SOCIAL NETWORK</h1>
+            <h3><i>Intended for the exchange of experiences in software development</i> </h3>
+        </div>
+        <div class="wrapper">
+            <form id="loginForm">
+                <h3>Login</h3>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="text" name="email" placeholder="email@email.com">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="text" name="password" placeholder="*********">
+                </div>
+                <div>
+                    <button>Login</button>
+                </div>
+            </form>
+        </div>
+        <div class="register-btn">
+            <p>You don't have an account?</p>
+            <button>Register</button>
+        </div>
+
+        <div class="register-modal">
+            <button class="close-modal">X</button>
+            <form id="registrationForm">
+                <h3>User Registration</h3>
+                <div>
+                    <label for="username">Username: *</label>
+                    <input type="text" name="username" placeholder="username">
+                </div>
+                <div>
+                    <label for="email">Email: *</label>
+                    <input type="email" name="email" placeholder="email@email.com">
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="*********">
+                </div>
+                <div>
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" name="confirmPassword" placeholder="*********">
+                </div>
+                <div>
+                    <button>Register</button>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript" src="js/validator.js"></script>
+        <script type="text/javascript" src="js/User.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>
