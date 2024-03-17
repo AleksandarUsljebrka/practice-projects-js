@@ -1,15 +1,15 @@
-let user = new User();
+let session = new Session();
+session = session.getCookie();
+if(session !==""){
+    window.location.href = "myProfile.html";
+}
+
 const validationSchema = {
     'username':{
         required: true,
         maxLen: 20,
         minLen: 3
     },
-    // 'lastName':{
-    //     required: true,
-    //     maxLen:20,
-    //     minLen:3
-    // },
     'password':{
         required:true,
         maxLen:20,
@@ -22,10 +22,6 @@ const validationSchema = {
         minLen:8,
         matching: 'password'
     },
-    // 'phoneNumber':{
-    //     maxLen:15,
-    //     minLen:9
-    // },
     'email':{
         maxLen:30,
         minLen:10,
@@ -38,7 +34,6 @@ let regModal = document.querySelector('.register-modal');
 let openRegisterModalBtn = document.querySelector('.register-btn button');
 
 let closeModalBtn = document.querySelector('.register-modal .close-modal');
-console.log(closeModalBtn)
 
 openRegisterModalBtn.addEventListener('click', () =>{
     regModal.style.display = 'block';
@@ -53,9 +48,33 @@ document.querySelector('#registrationForm').addEventListener('submit', e=>{
 
     if(!validator.validationPassed()){
         alert("Data input is not correct!");
+        console.log(username);
     }else{
-        alert("OK")
+        let username = document.querySelector('#username').value;
+        let password = document.querySelector('#password').value;
+        let email = document.querySelector('#email').value;
+        let user = new User(username, password, email);
+        
+        user.createUser();
     }
-})
+});
 
-user.fetchData();
+document.querySelector('#loginForm').addEventListener('submit', e=>{
+    e.preventDefault();
+    let email = document.querySelector('#loginForm input[name=email]').value;
+    let password = document.querySelector('#loginForm input[name=password]').value;
+    
+    let user = new User(undefined, password, email);
+    user.loginUser()
+})
+// let session = new Session();
+// setTimeout(()=>{
+//     console.log("prvi time");
+//     console.log(session.getCookie());
+
+// },3000);
+// setTimeout(()=>{
+//     console.log("drugi time");
+
+//     session.destroyCookie();
+// },7000);

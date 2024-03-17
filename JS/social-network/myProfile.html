@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Social Network</title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+
+                        <div class="inner-container">
+                            <img src="img/user1.jpg" alt="Profile Photo">
+                        </div>
+                    </div>
+                    <div class="col-md-9">    
+                        <div class="inner-container right-side  ">
+                            <form id="editProfileForm">
+                                <h3>Edit Profile</h3>
+                                <div>
+                                    <label for="username">Username: </label>
+                                    <input type="text" name="username" id="username" placeholder="username">
+                                </div>
+                                <div>
+                                    <label for="email">Email: </label>
+                                    <input type="email" name="email" id="email" placeholder="email@email.com">
+                                </div>
+                                <div>
+                                    <label for="password">Password:</label>
+                                    <input type="password" name="password" id="password" placeholder="*********">
+                                </div>
+                                <div>
+                                    <label for="newPassword">New Password:</label>
+                                    <input type="password" name="newPassword" id="newPassword" placeholder="*********">
+                                </div>
+                                <div>
+                                    <label for="confirmPassword">Confirm Password:</label>
+                                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="*********">
+                                </div>
+                                <div>
+                                    <button id="editBtn">Edit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        
+        
+        <script type="text/javascript" src="js/Session.js"></script>
+        <script type="text/javascript" src="js/validator.js"></script>
+        <script type="text/javascript" src="js/User.js"></script>
+        <script type="text/javascript" src="js/MyProfile.js"></script>
+    </body>
+</html>
