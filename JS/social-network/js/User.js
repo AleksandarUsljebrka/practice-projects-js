@@ -67,17 +67,16 @@ class User {
 
   }
 
-  getUser(user_id){
-    return fetch(this.api_url + 'users')
-    .then(response => response.json())
-    .then(data => {
-      let userReturn = '';
-      data.forEach(user => {
-        if (user.id == user_id) {
-          userReturn = user;
+  async getUser(user_id){
+    let response = await fetch(this.api_url + 'users');
+    let data = await response.json();
+    let user = '';
+    data.forEach(u =>{
+        if(u.id == user_id){
+            user = u;
+            
         }
-      });
-      return userReturn;
-    });
+    })
+    return user;
   }
 }

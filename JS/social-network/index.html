@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Social Network</title>
-        <link rel="stylesheet" href="style.css" type="text/css">
-    </head>
-    <body>
-        <div class="header">
+
+<head>
+    <title>Social Network</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="navbar.css" type="text/css">
+
+</head>
+
+<body>
+    <nav class="navCustom">
+        <ul class="sidebar">
+            <li id="closeMenu"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li><a href="#">Home</a></li>
+            <li id="myProfileSI"><a href="#">My Profile</a></li>
+            <li id="logout"><a href="#">Logout</a></li>
+            
+        </ul>
+        <ul class="ul">
+            <li class="hideOnMobile"><a href="#">Home</a></li>
+            <li class="hideOnMobile"><a href="#">My Profile</a></li>
+            <li class="hideOnMobile"><a href="#">Logout</a></li>
+            <li id="sidebarMenu"><a href="#"><svg  xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+        <ul class="ul-no-log">
+            <li ><a href="index.html">Login</a></li>    
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="title">
             <h1>SOCIAL NETWORK</h1>
             <h3><i>Intended for the exchange of experiences in software development</i> </h3>
         </div>
@@ -55,9 +78,11 @@
                 </div>
             </form>
         </div>
-        <script type="text/javascript" src="js/validator.js"></script>
-        <script type="text/javascript" src="js/Session.js"></script>
-        <script type="text/javascript" src="js/User.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-    </body>
+    </div>
+    <script type="text/javascript" src="js/validator.js"></script>
+    <script type="text/javascript" src="js/Session.js"></script>
+    <script type="text/javascript" src="js/User.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+</body>
+
 </html>

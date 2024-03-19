@@ -1,9 +1,3 @@
-let session = new Session();
-session = session.getCookie();
-if(session !==""){
-    window.location.href = "myProfile.html";
-}
-
 const validationSchema = {
     'username':{
         required: true,
@@ -29,6 +23,29 @@ const validationSchema = {
         required:true
     }
 }
+const validationSchemaLogin = {
+   
+    'password':{
+        required:true,
+        maxLen:20,
+        minLen:8,
+        
+    },
+    'email':{
+        maxLen:30,
+        minLen:10,
+        email:true,
+        required:true
+    }
+}
+let session = new Session();
+session = session.getCookie();
+if(session !==""){
+    window.location.href = "myProfile.html";
+    
+}else{
+}
+
 
 let regModal = document.querySelector('.register-modal');
 let openRegisterModalBtn = document.querySelector('.register-btn button');
@@ -59,6 +76,8 @@ document.querySelector('#registrationForm').addEventListener('submit', e=>{
     }
 });
 
+//login
+let validatorLogin = new Validator(validationSchemaLogin, '#loginForm');
 document.querySelector('#loginForm').addEventListener('submit', e=>{
     e.preventDefault();
     let email = document.querySelector('#loginForm input[name=email]').value;
@@ -67,6 +86,19 @@ document.querySelector('#loginForm').addEventListener('submit', e=>{
     let user = new User(undefined, password, email);
     user.loginUser()
 })
+
+//navbar
+document.querySelector('.navCustom .ul #sidebarMenu').addEventListener('click',e=>{
+    e.preventDefault();
+
+    document.querySelector('.navCustom .sidebar').style.display = 'block';
+})
+document.querySelector('.navCustom .sidebar #closeMenu').addEventListener('click', e=>{
+    e.preventDefault();
+
+    document.querySelector('.navCustom .sidebar').style.display = 'none';
+})
+
 // let session = new Session();
 // setTimeout(()=>{
 //     console.log("prvi time");

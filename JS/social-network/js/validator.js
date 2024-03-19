@@ -58,12 +58,13 @@ class Validator{
         this.populateErrors(this.errors);
     }
     populateErrors(errors){
-        for(const elem of document.querySelectorAll('ul')){
+        for(const elem of document.querySelectorAll('.errorList')){
             elem.remove();
         }
         for(let key of Object.keys(errors)){
             let parentElement = document.querySelector(`${this.formId} input[name=${key}]`).parentElement;
             let errorElement = document.createElement('ul');
+            errorElement.className = 'errorList';
             parentElement.appendChild(errorElement);
 
           
