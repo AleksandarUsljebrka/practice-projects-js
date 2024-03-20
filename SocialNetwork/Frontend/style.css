@@ -1,0 +1,239 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    /* padding:0 0 50px 0; */
+    font-family: sans-serif;
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 0 1000px inset;
+
+}
+
+/* .navbar  {
+    background-color:  rgba(0, 0, 0, 0.5); 
+    overflow: hidden;
+    width: 100%;
+    list-style: none; 
+    margin: 0;
+    padding: 0;
+    
+  } */
+  /* .navbar .navbar-div{
+    height: 100%;
+  }
+  .navbar .navbar-div div {
+    float: left; 
+    height: 100%;
+  }
+  .navbar .navbar-div div a{
+    padding-top: 25px;
+    height: 100%;
+  }*/
+  /* .navbar  #logoutNavbar {
+    float: right;
+    height: auto;
+  } 
+  
+  .navbar  a {
+    display: block;
+    color: turquoise;
+    text-align: center;
+    padding: 14px 16px; 
+    text-decoration:none;
+  }
+  
+ 
+  .navbar a:hover {
+    background-color: turquoise; 
+    color: black; 
+  }
+   */
+
+button{
+    cursor: pointer;
+}
+#registrationForm div ul{
+    color: red;
+    padding: 10px 0 0 2px;
+    list-style: none;
+}
+
+.title{
+    display: block;
+    color: turquoise;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.title h1{
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+.wrapper{
+    margin-top: 20px;
+    max-width: 700px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgb(20, 140, 200);
+
+    padding: 30px;
+}
+form h3{
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: rgb(70, 120, 200);
+
+}
+form div{
+    padding: 20px 0;
+}
+form div input{
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+form div label{
+    display: block;
+    font-weight: bold;
+    color: rgb(70, 120, 200);
+    font-size: 18px;
+    padding-bottom: 10px;
+
+}
+form div button{
+    width: 110px;
+    background-color: aqua;
+    border-radius: 70%;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px 10px;
+    
+    
+}
+.register-btn{
+    max-width: 700px;
+    margin: auto;
+    text-align: center;   
+}
+.register-btn p{
+    padding: 30px 0 10px 0;
+    color: turquoise;
+    font-size: 20px;
+    text-align: center;
+}
+.register-btn button{
+    width: 110px;
+    background-color: aqua;
+    border-radius: 70%;
+    height: 40px;
+    font-size: 18px;
+    padding: 10px 10px;
+    
+}
+
+.register-modal{
+    display: none;
+    background-color: rgb(0, 0, 0);
+    /* box-shadow: rgba(102, 142, 152, 0.9) 0 0 1000px 300px; */
+    box-shadow: rgba(0, 0, 0, 0.9) 0 0 1000px 200px;
+    
+    position: absolute;
+    max-width: 700px;
+    top:10%;
+    right: 0;
+    left: 0;
+    width: 100%;
+    margin: auto;
+    border: 2px solid rgb(20, 140, 200);
+
+    
+}
+.register-modal div label{
+    display: block;
+    font-weight: bold;
+    color: rgb(100, 160, 200);
+    font-size: 18px;
+    padding-bottom: 10px;
+
+}
+.register-modal div{
+    padding: 20px;
+}
+.register-modal h3{
+    padding: 20px 0px 0 20px;
+    color: rgb(100, 160, 200);
+
+}
+.register-modal label{
+    padding-bottom: 10px;
+}
+.register-modal .close-modal{
+    float: right;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    font-weight: bold;
+    border: 0;
+    color: rgb(100, 160, 200);
+
+    font-size: 30px;
+    margin: 10px;
+    padding: 10px 10px;
+}
+
+.inner-container{
+    border: 2px solid rgb(20, 140, 200);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    margin: 30px 20px 40px 20px ;
+    
+}
+.inner-container img{
+    width: 120px;
+    height: 130px;
+    border-radius: 100%;
+    border: 2px solid rgb(50, 110, 190);
+    
+}
+.inner-container button{
+    width: 110px;
+    background-color: aqua;
+    border-radius: 70%;
+    height: 40px;
+    font-size: 18px;
+    padding: 5px 0 5px 0;
+    
+    
+}
+.inner-container.img-container{
+    display: flex;
+    
+    justify-content: center; 
+    align-items: center; 
+}
+#editProfileForm div ul{
+    color: red;
+    padding: 10px 0 0 2px;
+    list-style: none;
+}
+#loginForm div ul{
+    color: red;
+    padding: 10px 0 0 2px;
+    list-style: none;
+}
+#editProfileForm{
+    text-align: left;
+}
+#editFormBtns{
+    display: flex;
+    justify-content: space-between;
+}
+#editFormBtns #deleteBtn{
+    background-color: red;
+}

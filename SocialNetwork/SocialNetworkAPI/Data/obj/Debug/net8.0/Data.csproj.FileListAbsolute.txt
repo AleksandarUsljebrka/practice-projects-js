@@ -1,0 +1,15 @@
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\bin\Debug\net8.0\Data.deps.json
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\bin\Debug\net8.0\Data.runtimeconfig.json
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\bin\Debug\net8.0\Data.dll
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\bin\Debug\net8.0\Data.pdb
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.csproj.AssemblyReference.cache
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.AssemblyInfoInputs.cache
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.AssemblyInfo.cs
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.csproj.CoreCompileInputs.cache
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.sourcelink.json
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.dll
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\refint\Data.dll
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.pdb
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
+D:\kursevi\JS_kursGIT\GIT\practice-projects-js\JS\social-network\backend\SocialNetworkAPI\Data\obj\Debug\net8.0\ref\Data.dll
