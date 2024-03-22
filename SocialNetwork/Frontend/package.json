@@ -1,7 +1,7 @@
 {
   "name": "social-network",
   "version": "1.0.0",
-  "description": "",
+  "description": "Practice projects from courses and tutorials.",
   "main": "index.js",
   "scripts": {
     "start": "json-server --watch ./database/db.json"

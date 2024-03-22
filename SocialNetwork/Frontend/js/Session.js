@@ -1,6 +1,14 @@
 class Session{
     user_id = "";
 
+
+    getToken(){
+        return localStorage.getItem('token');
+    }
+    removeToken(){
+        localStorage.removeItem('token');    
+    }
+
     startSession(){
         let date = new Date();
         date.setTime(date.getTime() + (10*60*1000));

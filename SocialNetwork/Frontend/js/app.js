@@ -39,8 +39,8 @@ const validationSchemaLogin = {
     }
 }
 let session = new Session();
-session = session.getCookie();
-if(session !==""){
+session = session.getToken();
+if(session !== null){
     window.location.href = "myProfile.html";
     
 }else{
@@ -58,22 +58,23 @@ openRegisterModalBtn.addEventListener('click', () =>{
 closeModalBtn.addEventListener('click', ()=>{
     regModal.style.display = 'none';
 })
-let validator = new Validator(validationSchema, '#registrationForm');
+// let validator = new Validator(validationSchema, '#registrationForm');
 
 document.querySelector('#registrationForm').addEventListener('submit', e=>{
     e.preventDefault();
 
-    if(!validator.validationPassed()){
-        alert("Data input is not correct!");
-        console.log(username);
-    }else{
+    // if(!validator.validationPassed()){
+    //     alert("Data input is not correct!");
+    //     console.log(username);
+    // }else{
         let username = document.querySelector('#username').value;
         let password = document.querySelector('#password').value;
+        let confirmPassword = document.querySelector('#confirmPassword').value;
         let email = document.querySelector('#email').value;
         let user = new User(username, password, email);
-        
+        user.confirmPassword = confirmPassword;        
         user.createUser();
-    }
+    // }
 });
 
 //login
@@ -87,17 +88,17 @@ document.querySelector('#loginForm').addEventListener('submit', e=>{
     user.loginUser()
 })
 
-//navbar
-document.querySelector('.navCustom .ul #sidebarMenu').addEventListener('click',e=>{
-    e.preventDefault();
+// //navbar
+// document.querySelector('.navCustom .ul #sidebarMenu').addEventListener('click',e=>{
+//     e.preventDefault();
 
-    document.querySelector('.navCustom .sidebar').style.display = 'block';
-})
-document.querySelector('.navCustom .sidebar #closeMenu').addEventListener('click', e=>{
-    e.preventDefault();
+//     document.querySelector('.navCustom .sidebar').style.display = 'block';
+// })
+// document.querySelector('.navCustom .sidebar #closeMenu').addEventListener('click', e=>{
+//     e.preventDefault();
 
-    document.querySelector('.navCustom .sidebar').style.display = 'none';
-})
+//     document.querySelector('.navCustom .sidebar').style.display = 'none';
+// })
 
 // let session = new Session();
 // setTimeout(()=>{
