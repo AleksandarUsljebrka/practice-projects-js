@@ -2,6 +2,22 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "AutoMapper/13.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Options": "6.0.0"
+        },
+        "compile": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/AutoMapper.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Azure.Core/1.25.0": {
         "type": "package",
         "dependencies": {
@@ -44,6 +60,15 @@
           "lib/netstandard2.0/Azure.Identity.dll": {
             "related": ".xml"
           }
+        }
+      },
+      "DataAnnotationsExtensions/5.0.1.27": {
+        "type": "package",
+        "compile": {
+          "lib/NETFramework40/DataAnnotationsExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/NETFramework40/DataAnnotationsExtensions.dll": {}
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -1656,6 +1681,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "AutoMapper": "13.0.1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.1",
           "Microsoft.EntityFrameworkCore": "8.0.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.1",
@@ -1670,10 +1696,42 @@
         "runtime": {
           "bin/placeholder/Data.dll": {}
         }
+      },
+      "Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "Data": "1.0.0",
+          "DataAnnotationsExtensions": "5.0.1.27",
+          "Microsoft.Extensions.Configuration.Abstractions": "8.0.0",
+          "System.IdentityModel.Tokens.Jwt": "7.4.1"
+        },
+        "compile": {
+          "bin/placeholder/Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Services.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/13.0.1": {
+      "sha512": "/Fx1SbJ16qS7dU4i604Sle+U9VLX+WSNVJggk6MupKVkYvvBm4XqYaeFuf67diHefHKHs50uQIS2YEDFhPCakQ==",
+      "type": "package",
+      "path": "automapper/13.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "automapper.13.0.1.nupkg.sha512",
+        "automapper.nuspec",
+        "icon.png",
+        "lib/net6.0/AutoMapper.dll",
+        "lib/net6.0/AutoMapper.xml"
+      ]
+    },
     "Azure.Core/1.25.0": {
       "sha512": "X8Dd4sAggS84KScWIjEbFAdt2U1KDolQopTPoHVubG2y3CM54f9l6asVrP5Uy384NWXjsspPYaJgz5xHc+KvTA==",
       "type": "package",
@@ -1710,6 +1768,18 @@
         "azureicon.png",
         "lib/netstandard2.0/Azure.Identity.dll",
         "lib/netstandard2.0/Azure.Identity.xml"
+      ]
+    },
+    "DataAnnotationsExtensions/5.0.1.27": {
+      "sha512": "lw4n4XzY62raAOrrlPdkh4h3PXenReARIazAPzs8AvlkKDAK9pe7kcUL3dh3T095/Q9+LezoXCfjEgDPslmGyg==",
+      "type": "package",
+      "path": "dataannotationsextensions/5.0.1.27",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "dataannotationsextensions.5.0.1.27.nupkg.sha512",
+        "dataannotationsextensions.nuspec",
+        "lib/NETFramework40/DataAnnotationsExtensions.dll"
       ]
     },
     "Humanizer.Core/2.14.1": {
@@ -4451,10 +4521,16 @@
       "type": "project",
       "path": "../Data/Data.csproj",
       "msbuildProject": "../Data/Data.csproj"
+    },
+    "Services/1.0.0": {
+      "type": "project",
+      "path": "../Services/Services.csproj",
+      "msbuildProject": "../Services/Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "AutoMapper >= 13.0.1",
       "Data >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.1",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.1",
@@ -4462,6 +4538,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.1",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.1",
       "Microsoft.IdentityModel.Tokens >= 7.4.1",
+      "Services >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
       "Swashbuckle.AspNetCore.Filters >= 8.0.1",
       "System.IdentityModel.Tokens.Jwt >= 7.4.1"
@@ -4473,11 +4550,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj",
+      "projectUniqueName": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj",
       "projectName": "SocialNetworkAPI",
-      "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj",
+      "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-      "outputPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\SocialNetworkAPI\\obj\\",
+      "outputPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\SocialNetworkAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4495,8 +4572,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\Data\\Data.csproj": {
-              "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\Data\\Data.csproj"
+            "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj": {
+              "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj"
+            },
+            "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Services\\Services.csproj": {
+              "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Services\\Services.csproj"
             }
           }
         }
@@ -4511,6 +4591,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[13.0.1, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[8.0.1, )"
@@ -4572,5 +4656,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'DataAnnotationsExtensions 5.0.1.27' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "DataAnnotationsExtensions",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

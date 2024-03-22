@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj": {}
+    "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj": {}
   },
   "projects": {
-    "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\Data\\Data.csproj": {
+    "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\Data\\Data.csproj",
+        "projectUniqueName": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\Data\\Data.csproj",
+        "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\Data\\obj\\",
+        "outputPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.1, )"
@@ -96,14 +100,14 @@
         }
       }
     },
-    "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj": {
+    "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Services\\Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj",
-        "projectName": "SocialNetworkAPI",
-        "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj",
+        "projectUniqueName": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Services\\Services.csproj",
+        "projectName": "Services",
+        "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Services\\Services.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\SocialNetworkAPI\\obj\\",
+        "outputPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -121,8 +125,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\Data\\Data.csproj": {
-                "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\JS\\social-network\\backend\\SocialNetworkAPI\\Data\\Data.csproj"
+              "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj": {
+                "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj"
               }
             }
           }
@@ -137,6 +141,91 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "DataAnnotationsExtensions": {
+              "target": "Package",
+              "version": "[5.0.1.27, )"
+            },
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.4.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj",
+        "projectName": "SocialNetworkAPI",
+        "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\SocialNetworkAPI\\SocialNetworkAPI.csproj",
+        "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
+        "outputPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\SocialNetworkAPI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\Microsoft SDKs\\Azure\\.NET SDK\\v2.9\\packages": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj": {
+                "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Data\\Data.csproj"
+              },
+              "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Services\\Services.csproj": {
+                "projectPath": "D:\\kursevi\\JS_kursGIT\\GIT\\practice-projects-js\\SocialNetwork\\SocialNetworkAPI\\Services\\Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.1, )"
