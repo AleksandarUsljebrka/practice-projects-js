@@ -18,6 +18,13 @@ body{
 ul{
     list-style: none;
 }
+#proba{
+    width: 100%;
+    list-style: none;
+    display: none;
+    justify-content: flex-start;
+    align-items: center; 
+}
 .navCustom .ul{
     width: 100%;
     list-style: none;
@@ -34,6 +41,21 @@ ul{
 }
 .navCustom li{
     height: 50px;
+
+}
+.navCustom p{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: turquoise;
+
+}
+.navCustom p:hover{
+    background-color: turquoise;
+    color: black;
+    fill: black;
 
 }
 .navCustom a{

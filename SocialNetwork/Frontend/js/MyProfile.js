@@ -20,7 +20,7 @@ let validator = new Validator(validationSchema,'#editProfileForm');
  session_token = session.getToken();
 
 
-if(session_token !==null    ){
+if(session_token !==null){
 
     document.querySelector('.ul-no-log').style.display='none';
     document.querySelector('.ul').style.display='flex';
@@ -29,12 +29,17 @@ if(session_token !==null    ){
     async function populateUserData(){
         let user = new User();
         data = await user.getUser(session_token);
-        console.log(data)
-        if (data.username && data.email) {
-            document.querySelector('#editProfileForm #username').value = data.username;
-            document.querySelector('#editProfileForm #email').value = data.email;
-          
+        if (data !== null) {
+            if (data.username && data.email) {
+                document.querySelector('#editProfileForm #username').value = data.username;
+                document.querySelector('#editProfileForm #email').value = data.email;
+            }
             
+            
+        }else{
+
+            session.removeToken();
+            window.location.href = "/";
         }
 
     }
@@ -71,40 +76,52 @@ document.querySelector('#deleteBtn').addEventListener('click', e=>{
     e.preventDefault();
     alert("Not work yet!")
 })
-//navbar
-document.querySelector('.navCustom .ul #sidebarMenu').addEventListener('click',e=>{
-    e.preventDefault();
+// //navbar
+// document.querySelector('.navCustom .ul #sidebarMenu').addEventListener('click',e=>{
+//     e.preventDefault();
 
-    document.querySelector('.navCustom .sidebar').style.display = 'block';
-})
-document.querySelector('.navCustom .sidebar #closeMenu').addEventListener('click', e=>{
-    e.preventDefault();
+//     document.querySelector('.navCustom .sidebar').style.display = 'block';
+// })
+// document.querySelector('.navCustom .sidebar #closeMenu').addEventListener('click', e=>{
+//     e.preventDefault();
 
-    document.querySelector('.navCustom .sidebar').style.display = 'none';
-})
-  //logout 
-  document.querySelector('#logout').addEventListener('click',e=>{
-    e.preventDefault();
-    let res = confirm("Are you sure you want to logout?");
+//     document.querySelector('.navCustom .sidebar').style.display = 'none';
+// })
+//   //logout 
+//   document.querySelector('#logoutNav').addEventListener('click',e=>{
+//     e.preventDefault();
+//     let res = confirm("Are you sure you want to logout?");
     
-    if(res){
-        session.removeToken();
-        console.log("Logout");
-        window.location.href="/";
+//     if(res){
+//         session.removeToken();
+//         console.log("Logout");
+//         window.location.href="/";
 
-    }else{
-        console.log("Necu logout");
-    }
-  })
-  document.querySelector('#logoutSide').addEventListener('click',e=>{
-    e.preventDefault();
-    let res = confirm("Are you sure you want to logout?");
+//     }else{
+//         console.log("Necu logout");
+//     }
+//   })
+//   document.querySelector('#logoutSide').addEventListener('click',e=>{
+//     e.preventDefault();
+//     let res = confirm("Are you sure you want to logout?");
     
-    if(res){
-        session.removeToken();
-        window.location.href="/";
-        console.log("Logout");
-    }else{
-        console.log("Necu logout");
-    }
-  })
+//     if(res){
+//         session.removeToken();
+//         window.location.href="/";
+//         console.log("Logout");
+//     }else{
+//         console.log("Necu logout");
+//     }
+//   })
+//   document.querySelector('#homeNav').addEventListener('click',e=>{
+//     e.preventDefault();
+    
+//     if(session_token !== null){
+
+//         window.location.href="home.html";
+
+//     }else{
+//         window.location.href="/";
+        
+//     }
+//   })

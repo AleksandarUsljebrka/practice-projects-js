@@ -1,0 +1,28 @@
+.post-div form{
+    display: flex;
+    height: 100px;
+}
+.post-div form textarea{
+    width: 80%;
+    padding: 10px;
+    border: 0;
+    outline-color: turquoise;
+    resize: none;
+}
+.post-div form button{
+    width: 20%;
+    font-size: 22px;
+    color: turquoise;
+    font-weight:bold;
+    letter-spacing: 4px;
+    background-color: rgb(17, 37, 71);
+}
+.post-div{
+    border: 2px solid rgb(20, 140, 200);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    margin: 30px 20px 40px 20px ;
+    width: 50%;
+    height: 200px;
+    margin: auto;
+}

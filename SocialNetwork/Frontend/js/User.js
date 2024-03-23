@@ -89,31 +89,49 @@ class User {
   //   // })
   // }
 
+  // fetch(`${this.api_url}User/user`,{
+  //   method:'GET',
+  //   headers:{
+  //     'Authorization': `Bearer ${token}`
+  //   }
+  // })
+  // .then(response=>response.json())
+  // .then(data=>{
+  //   return data;
+  // })
   async getUser(token){
-    // fetch(`${this.api_url}User/user`,{
+    try {
+      let response = await fetch(`${this.api_url}User/user`, {
+          method: 'GET',
+          headers: {
+              'Authorization': `Bearer ${token}`
+          }
+      });
+
+      if (response.ok) {
+          let data = await response.json();
+          return data;
+      } else {
+          throw new Error(`Request failed with status ${response.status}`);
+      }
+  } catch (error) {
+      console.error('Error fetching user:', error.message);
+      return null; 
+  }
+    // let response = await fetch(`${this.api_url}User/user`,{
     //   method:'GET',
     //   headers:{
     //     'Authorization': `Bearer ${token}`
     //   }
-    // })
-    // .then(response=>response.json())
-    // .then(data=>{
-    //   return data;
-    // })
-    let response = await fetch(`${this.api_url}User/user`,{
-      method:'GET',
-      headers:{
-        'Authorization': `Bearer ${token}`
-      }
-    });
-    let data = await response.json();
-    // let user = '';
-    // data.forEach(u =>{
-    //     if(u.id == user_id){
-    //         user = u;
-            
-    //     }
-    // })
-    return data;
+    // });
+    // console.log(response);
+    // let data;
+    // if(response.ok){
+    //   data = await response.json();
+    // }else{
+    //   data = false;
+    // }
+    
+    // return data;
   }
 }

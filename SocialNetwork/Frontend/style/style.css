@@ -6,7 +6,7 @@
 body{
     /* padding:0 0 50px 0; */
     font-family: sans-serif;
-    background-image: url('img/bg.jpg');
+    background-image: url('../img/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -207,53 +207,9 @@ form div button{
     padding: 10px 10px;
 }
 
-.inner-container{
-    border: 2px solid rgb(20, 140, 200);
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px;
-    margin: 30px 20px 40px 20px ;
-    
-}
-.inner-container img{
-    width: 120px;
-    height: 130px;
-    border-radius: 100%;
-    border: 2px solid rgb(50, 110, 190);
-    
-}
-.inner-container button{
-    width: 110px;
-    background-color: aqua;
-    border-radius: 70%;
-    height: 40px;
-    font-size: 18px;
-    padding: 5px 0 5px 0;
-    
-    
-}
-.inner-container.img-container{
-    display: flex;
-    
-    justify-content: center; 
-    align-items: center; 
-}
-#editProfileForm div ul{
-    color: red;
-    padding: 10px 0 0 2px;
-    list-style: none;
-}
+
 #loginForm div ul{
     color: red;
     padding: 10px 0 0 2px;
     list-style: none;
-}
-#editProfileForm{
-    text-align: left;
-}
-#editFormBtns{
-    display: flex;
-    justify-content: space-between;
-}
-#editFormBtns #deleteBtn{
-    background-color: red;
 }
