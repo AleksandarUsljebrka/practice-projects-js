@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Data.Repositories
 {
-	public class UserRepository(AppDbContext context) : Repository<User>(context), IUserRepository
+	public class UserRepository(AppDbContext _context) : Repository<User>(_context), IUserRepository
 	{
-
-       
-	
 
 		
 	}

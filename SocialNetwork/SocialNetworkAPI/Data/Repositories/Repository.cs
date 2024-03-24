@@ -42,6 +42,9 @@ namespace Data.Repositories
 			dbSet.Remove(entity);
 		}
 
-
+		public void Update(T entity)
+		{
+			dbSet.Update(entity);
+		}
 	}
 }

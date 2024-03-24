@@ -15,13 +15,14 @@ namespace Data.Repositories
         {
 			_context = context;
 			UserRepository = new UserRepository(_context);
+			PostRepository = new PostRepository(_context);
             
         }
         public IUserRepository UserRepository { get; set ; }
-
+		public IPostRepository PostRepository { get; set ; }
 		public void SaveChanges()
 		{
-			throw new NotImplementedException();
+			_context.SaveChanges();
 		}
 	}
 }

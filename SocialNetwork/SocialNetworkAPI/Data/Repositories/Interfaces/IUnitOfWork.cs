@@ -9,6 +9,7 @@ namespace Data.Repositories.Interfaces
 	public interface IUnitOfWork
 	{
 		IUserRepository UserRepository { get; set; }
+		IPostRepository PostRepository { get; set; }
 
 		void SaveChanges();
 	}

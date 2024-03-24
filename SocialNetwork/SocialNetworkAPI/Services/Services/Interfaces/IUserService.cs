@@ -12,7 +12,8 @@ namespace Services.Services.Interfaces
 	public interface IUserService
 	{
 		IResult GetUser(string token);
-		Task<IResult> CreateUser(UserDto userDto);
+		Task<IResult> CreateUser(RegisterDto userDto);
 		Task<IResult> LoginUser(LoginDto loginDto);
+		IResult UpdateUser(string token, UserDto userDto);
 	}
 }

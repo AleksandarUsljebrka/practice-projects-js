@@ -15,17 +15,36 @@ namespace SocialNetworkAPI.Controllers
 		[HttpGet]
 		[Route("user")]
 		[Authorize]
-		public IActionResult Index()
+		public IActionResult GetUser()
 		{
 			string token = Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").LastOrDefault();
 			var result = _userService.GetUser(token);
+
+			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
 			return Ok(result.Dto);
 		}
+
+		[HttpPut("user")]
+		[Authorize]
+		public IActionResult UpdateUser(UserDto newUserDto)
+		{
+
+			string token = Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").LastOrDefault();
+			var result = _userService.UpdateUser(token, newUserDto);
+
+			if (!result.Successfull)
+				return StatusCode((int)result.ErrorCode, result.ErrorMess);
+			return Ok();
+		}
+
 		[HttpPost]
 		[Route("register")]
-		public async Task<IActionResult> Register(UserDto userDto)
+		public async Task<IActionResult> Register(RegisterDto userDto)
 		{
 			var response = await _userService.CreateUser(userDto);
+
+			if (!response.Successfull) return StatusCode((int)response.ErrorCode, response.ErrorMess);
+
 			return Ok(response);
 			//return $"OKKKK";
 		}
@@ -33,6 +52,8 @@ namespace SocialNetworkAPI.Controllers
 		public async Task<IActionResult> Login(LoginDto loginDTO)
 		{
 			var response = await _userService.LoginUser(loginDTO);
+			if (!response.Successfull) return StatusCode((int)response.ErrorCode, response.ErrorMess);
+
 			return Ok(response);
 		}
 	}
