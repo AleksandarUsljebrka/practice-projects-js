@@ -12,5 +12,6 @@ namespace Services.Services.Interfaces
 	public interface IPostService
 	{
 		IResult AddPost(NewPostDto newPost, string token);
+		IResult GetAll();
 	}
 }

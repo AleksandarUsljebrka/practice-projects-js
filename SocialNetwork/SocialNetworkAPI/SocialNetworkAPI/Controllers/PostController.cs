@@ -21,5 +21,15 @@ namespace SocialNetworkAPI.Controllers
 			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
 			return Ok(result);
 		}
+
+		[HttpGet("get-posts")]
+		[Authorize]
+		public IActionResult GetAllPosts()
+		{
+			var result = _postService.GetAll();
+			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
+
+			return Ok(result.Dto);
+		}
 	}
 }

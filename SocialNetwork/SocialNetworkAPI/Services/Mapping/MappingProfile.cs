@@ -14,7 +14,7 @@ namespace Services.Mapping
 		{
 			CreateMap<User, UserDto>().ReverseMap();
 			CreateMap<Post, NewPostDto>().ReverseMap();
-
+			CreateMap<Post, PostDto>().ReverseMap();
 		}
 		
 	}

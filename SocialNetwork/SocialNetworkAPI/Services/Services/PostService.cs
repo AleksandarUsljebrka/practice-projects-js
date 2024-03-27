@@ -31,5 +31,15 @@ namespace Services.Services
 
 			return new Result(true);
 		}
+
+		public IResult GetAll()
+		{
+			var posts = _unitOfWork.PostRepository.GetAllIncludeUsers();
+			if (posts is null) return new Result(false, "There is no posts.");
+
+			PostListDto postsDto = new PostListDto() { PostList = _mapper.Map<List<PostDto>>(posts)};
+
+			return new Result(true, postsDto);
+		}
 	}
 }

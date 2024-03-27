@@ -9,5 +9,7 @@ namespace Data.Repositories.Interfaces
 {
 	public interface IPostRepository:IRepository<Post>
 	{
+		IEnumerable<Post> GetAllIncludeUsers();
+
 	}
 }
