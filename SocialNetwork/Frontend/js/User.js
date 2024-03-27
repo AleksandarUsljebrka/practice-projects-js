@@ -14,33 +14,39 @@ class User {
     this.confirmPassword = '';
     
   }
-  createUser() {
-    let data = {
+  async createUser() {
+    let body = {
       username: this.username,
       password: this.password,
       email: this.email,
       confirmPassword: this.confirmPassword
     };
-    fetch(this.api_url + "User/register", {
+    try{
+    let response = await fetch(this.api_url + "User/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then((data) => {
-        if(flag === true && token !==null){
+      body: JSON.stringify(body),
+    });
+      let data = await response.json();
+      if(data.successfull  === true && data.token !==null){
 
           console.log(data);
           localStorage.setItem('token', data.token);
-        }else{
-          alert("Error ocured!");
+          // window.location.href = "myProfile.html";       
+
+        }else if(!data.successfull){
+          throw new Error();
         }
+      }
+      catch(error){
+        alert(error);
+      }
         // let session = new Session();
         // session.user_id = data.id;
         // session.startSession();
-    });
+
   }
 
   loginUser(){

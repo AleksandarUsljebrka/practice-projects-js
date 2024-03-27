@@ -1,3 +1,14 @@
+
+button{
+    white-space:nowrap;
+    overflow: hidden;
+
+    min-width: 50px;
+}
+.post-div{
+    overflow: hidden;
+
+}
 .post-div form{
     display: flex;
     height: 100px;
@@ -8,8 +19,10 @@
     border: 0;
     outline-color: turquoise;
     resize: none;
+    overflow: hidden;
+
 }
-.post-div form button{
+#postPostBtn{
     width: 20%;
     font-size: 22px;
     color: turquoise;
@@ -17,12 +30,60 @@
     letter-spacing: 4px;
     background-color: rgb(17, 37, 71);
 }
+/* .post-div {
+    border: 2px solid rgb(20, 140, 200);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    margin: 30px auto;
+    width: 50%; 
+    min-height: 200px;
+    overflow: hidden; 
+    box-sizing: border-box; 
+} */
 .post-div{
     border: 2px solid rgb(20, 140, 200);
     background-color: rgba(0, 0, 0, 0.6);
     padding: 10px;
-    margin: 30px 20px 40px 20px ;
+    margin: 30px auto ;
     width: 50%;
-    height: 200px;
+    
     margin: auto;
+}
+#allPosts .one-post{
+    background-color:darkcyan;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+}
+#allPosts .one-post .post-content{
+    padding-bottom: 10px;
+    border-bottom: 2px solid white;
+    font-size: 20px;
+    overflow: hidden;
+
+    margin-bottom: 10px;
+}
+#allPosts .post-comment form{
+    height: 30px;
+    margin-top: 10px;
+}
+#allPosts .post-comment form input{
+    width: 80%;
+    padding: 0 10px;
+}
+#allPosts .post-comment form button{
+    width: 20%;
+    background-color:darkslategray;
+    color: white;
+}
+#allPosts .post-actions button{
+    padding: 2px;
+    background-color:darkslategray;
+    color: white;
+}
+
+#allPosts #author{
+    border: 2px solid white;
+    padding: 5px;
+    margin-bottom: 10px;
 }

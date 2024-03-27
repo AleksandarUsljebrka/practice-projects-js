@@ -8,7 +8,12 @@ class Session{
     removeToken(){
         localStorage.removeItem('token');    
     }
-
+    decodeJwt(token) {
+        const base64Url = token.split('.')[1];
+        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        const jsonData = JSON.parse(atob(base64));
+        return jsonData;
+    }
     startSession(){
         let date = new Date();
         date.setTime(date.getTime() + (10*60*1000));

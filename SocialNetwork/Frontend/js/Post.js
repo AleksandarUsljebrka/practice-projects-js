@@ -4,12 +4,17 @@ class Post{
     likes = '';
     content = '';
     api_url = "https://localhost:7090/";
-
+    session ='';
+    session_token='';
+    constructor(){
+        this.session = new Session();
+        this.session_token = session.getToken();
+    }
     async create() {
-        let session = new Session();
-        let session_token = session.getToken();
+        
         let data = {
-            content:this.content
+            content:this.content,
+            userId:this.user_id
         }
         let response = await fetch(this.api_url+"Post/add-post",{
             method:'POST',
@@ -21,6 +26,18 @@ class Post{
         });
         data = await response.json();
 
+        return data;
+    }
+    async getAll(){
+        
+        let response = await fetch(this.api_url+"Post/get-all",{
+            method:'GET',
+            headers:{
+                'Content-Type':'application/json',
+                'Authorization': `Bearer ${session_token}`
+            }
+        });
+        let data = await response.json();
         return data;
     }
 }

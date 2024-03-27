@@ -58,15 +58,15 @@ openRegisterModalBtn.addEventListener('click', () =>{
 closeModalBtn.addEventListener('click', ()=>{
     regModal.style.display = 'none';
 })
-// let validator = new Validator(validationSchema, '#registrationForm');
+let validator = new Validator(validationSchema, '#registrationForm');
 
 document.querySelector('#registrationForm').addEventListener('submit', e=>{
     e.preventDefault();
 
-    // if(!validator.validationPassed()){
-    //     alert("Data input is not correct!");
-    //     console.log(username);
-    // }else{
+    if(!validator.validationPassed()){
+        alert("Data input is not correct!");
+        console.log(username);
+    }else{
         let username = document.querySelector('#username').value;
         let password = document.querySelector('#password').value;
         let confirmPassword = document.querySelector('#confirmPassword').value;
@@ -74,7 +74,7 @@ document.querySelector('#registrationForm').addEventListener('submit', e=>{
         let user = new User(username, password, email);
         user.confirmPassword = confirmPassword;        
         user.createUser();
-    // }
+    }
 });
 
 //login
