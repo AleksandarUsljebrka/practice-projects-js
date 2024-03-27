@@ -52,27 +52,27 @@ if(session_token !==null){
   document.querySelector('#editBtn').addEventListener('click', e=>{
     e.preventDefault();
     alert("Not work yet!")
-    if(!validator.validationPassed()){
-        alert("Data input is not correct!");
-        console.log(username);
-    }else{
-        let usernm = document.querySelector('#editProfileForm #username').value;
-        let em = document.querySelector('#editProfileForm  #email').value;
-        let user = new User(usernm, undefined, em);
+    // if(!validator.validationPassed()){
+    //     alert("Data input is not correct!");
+    //     console.log(username);
+    // }else{
+    //     let usernm = document.querySelector('#editProfileForm #username').value;
+    //     let em = document.querySelector('#editProfileForm  #email').value;
+    //     let user = new User(usernm, undefined, em);
 
-        let data={ username: usernm, email: em }
-        fetch('https://localhost:7090/User/user',{
-            method:'PUT',
-            headers:{
-                'Content-Type':'application/json',
-                'Authorization': `Bearer ${session_token}`
-            },
-            body: JSON.stringify(data)
-        }).then(response=>response.json()).then(data=>{
-            console.log(data);
-        })
+    //     let data={ username: usernm, email: em }
+    //     fetch('https://localhost:7090/User/user',{
+    //         method:'PUT',
+    //         headers:{
+    //             'Content-Type':'application/json',
+    //             'Authorization': `Bearer ${session_token}`
+    //         },
+    //         body: JSON.stringify(data)
+    //     }).then(response=>response.json()).then(data=>{
+    //         console.log(data);
+    //     })
       //  user.editUser();
-    }
+    // }
   })
 //delete
 document.querySelector('#deleteBtn').addEventListener('click', e=>{

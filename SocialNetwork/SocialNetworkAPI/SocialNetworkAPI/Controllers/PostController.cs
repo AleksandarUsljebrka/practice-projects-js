@@ -19,7 +19,7 @@ namespace SocialNetworkAPI.Controllers
 			var result = _postService.AddPost(newPostDto, token);
 
 			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
-			return Ok();
+			return Ok(result);
 		}
 	}
 }
