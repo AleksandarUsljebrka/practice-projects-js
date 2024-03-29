@@ -11,7 +11,9 @@ namespace Services.Services.Interfaces
 {
 	public interface IPostService
 	{
-		IResult AddPost(NewPostDto newPost, string token);
+		Task<IResult> AddPost(NewPostDto newPost, string token);
 		IResult GetAll();
+		IResult AddComment(NewCommentDto newCommentDto);
+		IResult GetComments(int postId);
 	}
 }

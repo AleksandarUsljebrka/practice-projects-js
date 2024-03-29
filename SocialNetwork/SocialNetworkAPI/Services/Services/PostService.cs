@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Data.Models;
 using Data.Repositories.Interfaces;
+using Microsoft.Identity.Client;
 using Services.DTOs;
 using Services.Helpers.Interfaces;
 using Services.Results;
@@ -15,7 +16,7 @@ namespace Services.Services
 {
 	public class PostService(IUnitOfWork _unitOfWork, ITokenHelper _tokenHelper, IMapper _mapper) : IPostService
 	{
-		public IResult AddPost(NewPostDto newPostDto, string token)
+		public async Task<IResult> AddPost(NewPostDto newPostDto, string token)
 		{
 			if (newPostDto is null) return new Result(false, ErrorCode.BadRequest, "Model is empty");
 
@@ -26,20 +27,49 @@ namespace Services.Services
 			post.User = user;
 			post.Likes = 0;
 
-			_unitOfWork.PostRepository.Add(post);
+			var postId = await _unitOfWork.PostRepository.AddPost(post);
+			
+
+			return new Result(true, postId);
+		}
+
+		public IResult GetAll()
+		{
+			var posts = _unitOfWork.PostRepository.GetAllIncludeUsersAndComments();
+			if (posts is null) return new Result(false, "There is no posts.");
+			//var commentsOfPost = _unitOfWork.CommentRepository.GetAllCommentsOfPost()
+			PostListDto postsDto = new PostListDto() { PostList = _mapper.Map<List<PostDto>>(posts)};
+			
+				return new Result(true, postsDto);
+		}
+
+		public IResult AddComment(NewCommentDto newCommentDto)
+		{
+			if (newCommentDto is null) return new Result(false, ErrorCode.BadRequest, "No content added");
+
+			var post = _unitOfWork.PostRepository.Get(p => p.Id == newCommentDto.PostId);
+			if(post is null) return new Result(false, ErrorCode.NotFound, "Post doesn't exists");
+
+			var comment = _mapper.Map<Comment>(newCommentDto);
+			comment.PostKey = post.Id;
+			comment.Post = post;
+			_unitOfWork.CommentRepository.Add(comment);
 			_unitOfWork.SaveChanges();
 
 			return new Result(true);
 		}
 
-		public IResult GetAll()
+		public IResult GetComments(int postId)
 		{
-			var posts = _unitOfWork.PostRepository.GetAllIncludeUsers();
-			if (posts is null) return new Result(false, "There is no posts.");
+			var post = _unitOfWork.PostRepository.Get(p => p.Id == postId);
+			if (post is null) return new Result(false, ErrorCode.NotFound, "Post not found");
 
-			PostListDto postsDto = new PostListDto() { PostList = _mapper.Map<List<PostDto>>(posts)};
+			var comments = _unitOfWork.CommentRepository.GetAllCommentsOfPost(c => c.PostKey == postId);
+			if (comments is null) return new Result(false, ErrorCode.NotFound, "No comments found");
 
-			return new Result(true, postsDto);
+			var commentsDto = new CommentListDto() { CommentsList = _mapper.Map<List<CommentDto>>(comments)};
+			
+			return new Result(true, commentsDto);
 		}
 	}
 }

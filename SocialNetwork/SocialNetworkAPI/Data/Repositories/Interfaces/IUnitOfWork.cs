@@ -10,6 +10,8 @@ namespace Data.Repositories.Interfaces
 	{
 		IUserRepository UserRepository { get; set; }
 		IPostRepository PostRepository { get; set; }
+		ICommentRepository CommentRepository { get; set; }
+
 
 		void SaveChanges();
 	}

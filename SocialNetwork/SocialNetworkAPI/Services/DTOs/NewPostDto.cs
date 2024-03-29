@@ -11,6 +11,6 @@ namespace Services.DTOs
 	public class NewPostDto:IDTO
 	{
 		public string? Content { get; set; }
-
+		public string? UserId { get; set; }
 	}
 }

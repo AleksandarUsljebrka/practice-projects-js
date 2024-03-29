@@ -2,15 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Data.Repositories.Interfaces
 {
-	public interface IPostRepository:IRepository<Post>
+	public interface ICommentRepository:IRepository<Comment>
 	{
-		IEnumerable<Post> GetAllIncludeUsersAndComments();
-		Task<int> AddPost(Post post);
-
+		IEnumerable<Comment> GetAllCommentsOfPost(Expression<Func<Comment, bool>> predicate);
 	}
 }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240320110601_Initial")]
-    partial class Initial
+    [Migration("20240329153800_Initial migration")]
+    partial class Initialmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -37,6 +37,9 @@ namespace Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("PostId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("PostKey")
                         .HasColumnType("int");
 
                     b.HasKey("Id");

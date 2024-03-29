@@ -12,21 +12,41 @@ namespace SocialNetworkAPI.Controllers
 	{
 		[HttpPost("add-post")]
 		[Authorize]
-		public IActionResult AddPost(NewPostDto newPostDto)
+		public async Task<IActionResult> AddPost(NewPostDto newPostDto)
 		{
 			string token = Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").LastOrDefault();
 
-			var result = _postService.AddPost(newPostDto, token);
+			var result = await _postService.AddPost(newPostDto, token);
 
 			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
 			return Ok(result);
 		}
 
-		[HttpGet("get-posts")]
+		[HttpGet("get-all")]
 		[Authorize]
 		public IActionResult GetAllPosts()
 		{
 			var result = _postService.GetAll();
+			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
+
+			return Ok(result.Dto);
+		}
+
+		[HttpPost("add-comment")]
+		[Authorize]
+		public IActionResult AddComment(NewCommentDto commentDto)
+		{
+			var result = _postService.AddComment(commentDto);
+			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
+
+			return Ok(result.Dto);
+		}
+
+		[HttpGet("get-comments")]
+		[Authorize]
+		public IActionResult GetComments([FromQuery]int postId)
+		{
+			var result = _postService.GetComments(postId);
 			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
 
 			return Ok(result.Dto);

@@ -11,5 +11,6 @@ namespace Data.Models
 		public int Id { get; set; }
 		public string? Content { get; set; }
 		public Post? Post {  get; set; }
+		public int? PostKey { get; set; }
 	}
 }

@@ -12,10 +12,16 @@ namespace Services.Mapping
 	{
 		public MappingProfile() 
 		{
+			
 			CreateMap<User, UserDto>().ReverseMap();
 			CreateMap<Post, NewPostDto>().ReverseMap();
-			CreateMap<Post, PostDto>().ReverseMap();
-		}
+			CreateMap<Post, PostDto>()
+			.ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.User.UserName));
+			//.ForMember(dest => dest.Comments, opt => opt.MapFrom(src => src.Comments));
 		
+			CreateMap<Comment, NewCommentDto>().ReverseMap();
+			CreateMap<Comment, CommentDto>().ReverseMap();
+		}
+
 	}
 }
