@@ -34,9 +34,9 @@ namespace SocialNetworkAPI.Controllers
 
 		[HttpPost("add-comment")]
 		[Authorize]
-		public IActionResult AddComment(NewCommentDto commentDto)
+		public async Task<IActionResult> AddComment(NewCommentDto commentDto)
 		{
-			var result = _postService.AddComment(commentDto);
+			var result = await _postService.AddComment(commentDto);
 			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
 
 			return Ok(result.Dto);
@@ -50,6 +50,16 @@ namespace SocialNetworkAPI.Controllers
 			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
 
 			return Ok(result.Dto);
+		}
+
+		[HttpDelete("delete-post")]
+		[Authorize]
+		public async Task<IActionResult> DeletePost([FromQuery]int postId)
+		{
+			var result = await _postService.DeletePost(postId);
+			if (!result.Successfull) return StatusCode((int)result.ErrorCode, result.ErrorMess);
+
+			return Ok(result);
 		}
 	}
 }

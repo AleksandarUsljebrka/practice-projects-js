@@ -43,7 +43,29 @@ namespace Services.Services
 				return new Result(true, postsDto);
 		}
 
-		public IResult AddComment(NewCommentDto newCommentDto)
+		public async Task<IResult> DeletePost(int postId)
+		{
+			var post = _unitOfWork.PostRepository.Get(p => p.Id == postId);
+			if (post is null) return new Result(false, ErrorCode.NotFound, "No post found");
+
+			var commentsOfPost =
+				_unitOfWork.CommentRepository.GetAllCommentsOfPost(c => c.PostKey == postId);
+			
+			int postIdResponse;
+
+			if (commentsOfPost is null)
+			{
+				postIdResponse = await _unitOfWork.PostRepository.DeletePost(post);
+			}
+			else
+			{
+				_unitOfWork.CommentRepository.RemoveRange(commentsOfPost);
+				postIdResponse = await _unitOfWork.PostRepository.DeletePost(post);
+
+			}
+			return new Result(true, postIdResponse);
+		}
+		public async Task<IResult> AddComment(NewCommentDto newCommentDto)
 		{
 			if (newCommentDto is null) return new Result(false, ErrorCode.BadRequest, "No content added");
 
@@ -53,10 +75,11 @@ namespace Services.Services
 			var comment = _mapper.Map<Comment>(newCommentDto);
 			comment.PostKey = post.Id;
 			comment.Post = post;
-			_unitOfWork.CommentRepository.Add(comment);
-			_unitOfWork.SaveChanges();
 
-			return new Result(true);
+			var commentResponse = await _unitOfWork.CommentRepository.AddComment(comment);
+			var commentDto = _mapper.Map<CommentDto>(comment);
+
+			return new Result(true, commentDto);
 		}
 
 		public IResult GetComments(int postId)

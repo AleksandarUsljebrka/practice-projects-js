@@ -22,5 +22,11 @@ namespace Data.Repositories
 			await _context.SaveChangesAsync();
 			return post.Id;
 		}
+		public async Task<int> DeletePost(Post post)
+		{
+			_context.Set<Post>().Remove(post);
+			await _context.SaveChangesAsync();
+			return post.Id;
+		}
 	}
 }

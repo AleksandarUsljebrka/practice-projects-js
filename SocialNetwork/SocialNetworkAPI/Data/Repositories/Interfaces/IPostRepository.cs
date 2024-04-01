@@ -11,6 +11,6 @@ namespace Data.Repositories.Interfaces
 	{
 		IEnumerable<Post> GetAllIncludeUsersAndComments();
 		Task<int> AddPost(Post post);
-
+		Task<int> DeletePost(Post post);
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace Data.Repositories.Interfaces
 	public interface ICommentRepository:IRepository<Comment>
 	{
 		IEnumerable<Comment> GetAllCommentsOfPost(Expression<Func<Comment, bool>> predicate);
+		Task<Comment> AddComment(Comment comment);
 	}
 }

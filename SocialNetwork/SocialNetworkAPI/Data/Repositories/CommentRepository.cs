@@ -16,5 +16,11 @@ namespace Data.Repositories
 		{
 			return _context.Set<Comment>().Where(predicate).ToList();
 		}
+		public async Task<Comment> AddComment(Comment comment)
+		{
+			_context.Set<Comment>().Add(comment);
+			await _context.SaveChangesAsync();
+			return comment;
+		}
 	}
 }

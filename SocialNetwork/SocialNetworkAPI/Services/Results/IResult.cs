@@ -10,5 +10,7 @@ namespace Services.Results
         IDTO Dto { get; set; }
         ErrorCode ErrorCode { get; set; }
         string Token { get; set; }
-    }
+		int PostId { get; set; }
+
+	}
 }
